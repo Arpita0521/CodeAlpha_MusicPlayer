@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-section {
+            width: 30%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .left-section img {
+            width: 250px;
+            height: 250px; /* Ensuring it looks like a square box */
+            border-radius: 10px;
+        }
+
+        .playlist-name {
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+
+        .play-button-left {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%; /* Making it round */
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .play-button-left:hover {
+            background-color: #0056b3;
+        }
+
+        .play-button-left:before {
+            content: '▶'; /* Adding play symbol inside the button */
+            font-size: 1.5rem;
+        }
+
+        .right-section {
+            width: 65%;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .song-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* To space out the heart icon */
+        }
+
+        .song-number {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .song-name {
+            font-size: 1.5rem;
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .heart {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .heart.white {
+            color: #ddd; /* Default white (grayish) */
+        }
+
+        .heart.red {
+            color: #ff0000; /* Red when clicked */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section for clicked div -->
+        <div class="left-section">
+            <img src="img4.jpg" alt="Playlist Image"> <!-- Replace with the clicked div image -->
+            <div class="playlist-name">Sad</div> <!-- Playlist Name under image -->
+            <button class="play-button-left" onclick="window.location.href='p3music.html'"></button> <!-- Round Play Button -->
+        </div>
+
+        <!-- Right Section for Song List -->
+        <div class="right-section">
+            <a class="back-button" href="index.html">←</a> <!-- Back button -->
+            <h1>Song List</h1>
+            <div class="song-item">
+                <span class="song-number">1</span>
+                <span class="song-name">O Bedardeya</span>
+                <span class="heart white" onclick="toggleHeart(this)">&#10084;</span>
+            </div>
+            <div class="song-item">
+                <span class="song-number">2</span>
+                <span class="song-name">Yah ruh bhi meri</span>
+                <span class="heart white" onclick="toggleHeart(this)">&#10084;</span>
+            </div>
+            <div class="song-item">
+                <span class="song-number">3</span>
+                <span class="song-name">Samjhavan</span>
+                <span class="heart white" onclick="toggleHeart(this)">&#10084;</span>
+            </div>
+            <div class="song-item">
+                <span class="song-number">4</span>
+                <span class="song-name">aashiq ho jana </span>
+                <span class="heart white" onclick="toggleHeart(this)">&#10084;</span>
+            </div>
+            <div class="song-item">
+                <span class="song-number">5</span>
+                <span class="song-name">man mera</span>
+                <span class="heart white" onclick="toggleHeart(this)">&#10084;</span>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" src=""></audio>
+
+    <script>
+        // Function to toggle heart color between white and red
+        function toggleHeart(heart) {
+            heart.classList.toggle('red');
+            heart.classList.toggle('white');
+        }
+
+        function playSong(songSrc) {
+            const audio = document.getElementById('audio');
+            audio.src = songSrc;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
+

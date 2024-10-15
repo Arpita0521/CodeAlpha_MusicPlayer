@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2.5rem;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+            gap: 20px; /* Space between the grid items */
+            padding: 20px 0;
+           
+        }
+
+        .gallery div {
+            background-color: #0056b3;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .gallery div:hover {
+            transform: scale(1.05);
+            background-color: #7da6f1;
+        }
+
+        .gallery img {
+            width: 270px;
+            height: 170px;
+            object-fit: cover;
+            position: absolute;
+            top: 20px;
+        }
+
+        .gallery span {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                font-size: 2rem;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Music Gallery
+        </div>
+        <div class="gallery">
+            <div onclick="window.location.href='playlist1.html'">
+                <img src="img1.jpg" alt="Playlist 1">
+                <span>Devotion</span>
+            </div>
+            <div onclick="window.location.href='playlist2.html'">
+                <img src="img3.jpg" alt="Playlist 2">
+                <span>Party</span>
+            </div>
+            <div onclick="window.location.href='playlist3.html'">
+                <img src="img4.jpg" alt="Playlist 3">
+                <span>sad</span>
+            </div>
+            <div onclick="window.location.href='playlist4.html'">
+                <img src="img6.jpg" alt="Playlist 4">
+                <span>Motivation</span>
+            </div>
+            <div onclick="window.location.href='playlist5.html'">
+                <img src="img2.jpg" alt="Playlist 5">
+                <span>Bollywood</span>
+            </div>
+            <div onclick="window.location.href='playlist6.html'">
+                <img src="img5.jpg" alt="Playlist 6">
+                <span>Workout</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
